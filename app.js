@@ -8,10 +8,15 @@ import passport from "passport";
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import verifyRoutes from "./routes/verifyRoutes.js";
+<<<<<<< HEAD
 import videoRoutes from "./routes/videoRoutes.js";
+=======
+import predictRoutes from "./routes/predictRoutes.js";
+>>>>>>> 811f5a0d8006bce4f4a3c368bd80e02b10126139
 
 import errorMiddleware from "./middleware/error.js";
 import { isAuthenticated } from "./middleware/auth.js";
+import multer from './middleware/mullter.js'
 
 import { connectPassport } from "./utils/googleAuthProvider.js";
 
@@ -61,7 +66,12 @@ app.get("/", (req, res) => {
 app.use("/api/v1/verify", verifyRoutes);
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/user", isAuthenticated, userRoutes);
+<<<<<<< HEAD
 app.use("/api/v1/video", videoRoutes);
+=======
+app.use("/api/v1/predict", predictRoutes);
+
+>>>>>>> 811f5a0d8006bce4f4a3c368bd80e02b10126139
 
 //Error Handler
 app.use(errorMiddleware);
