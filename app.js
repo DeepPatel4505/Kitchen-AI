@@ -8,9 +8,11 @@ import passport from "passport";
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import verifyRoutes from "./routes/verifyRoutes.js";
+import predictRoutes from "./routes/predictRoutes.js";
 
 import errorMiddleware from "./middleware/error.js";
 import { isAuthenticated } from "./middleware/auth.js";
+import multer from './middleware/mullter.js'
 
 import { connectPassport } from "./utils/googleAuthProvider.js";
 
@@ -53,6 +55,7 @@ app.get("/", (req, res) => {
 app.use("/api/v1/verify", verifyRoutes);
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/user", isAuthenticated, userRoutes);
+app.use("/api/v1/predict", predictRoutes);
 
 
 //Error Handler
